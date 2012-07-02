@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     #TODO: perhaps add an if statement here to sort it only into post.comments if there's no parent comment?
     @comment = @post.comments.new(params[:comment])
 
-@comment.name = current_user.name
+		@comment.name = current_user.name
     #Jon added
     @comment.user = current_user
     @comment.relative_value = 0

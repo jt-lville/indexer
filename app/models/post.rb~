@@ -1,11 +1,13 @@
  class Post < ActiveRecord::Base
 
-#  has_attached_file :upload, :styles => { :medium => "200x200#", :thumb => "100x100#" },
- #   :default_url => "/images/:style/missing.png",
- #     :storage => :s3,
- #     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
- #     :bucket => 'sschan'
+  has_attached_file :upload, :styles => { :medium => "200x200#", :thumb => "100x100#" },
+    :default_url => "/images/:style/missing.png",
+      :storage => :s3,
+      :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+      :bucket => 'sschan'
+      #:path => ":attachment/:id/:style.:extension",
 
+    #:path => "/images/uploads/", :url => "/images/uploads/:style/:post_id.:extension" #uploads
 
 	acts_as_taggable
 

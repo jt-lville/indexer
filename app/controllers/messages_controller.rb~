@@ -18,6 +18,9 @@ class MessagesController < ApplicationController
       flash[:notice] = "you created a message"
       redirect_to '/posts'
       
+      # Send a Pusher notification
+      Pusher['private-'+params[:message][:recipient_id]].trigger('new_message', {:from => current_user.name, :subject => message.subject})
+
     else
       @user = User.find(params[:message][:recipient_id])
       render :action => 'users/show'
