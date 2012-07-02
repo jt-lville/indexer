@@ -1,0 +1,129 @@
+<%= stylesheet_link_tag "chan" %>
+
+<%#= render '/layouts/sideBar' %>
+
+<center><%= image_tag(random_banner_url)  %><br/> 
+
+  <h1>/posts - Postfeed</h1>
+
+  <i><%= random_phrase %></i>
+
+</center>
+<hr/>
+<div class ="status"></div>
+
+<%= form_for :post, @post, :html => {:multipart => true} do |f| %>
+
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div id="bar">
+    <%= f.text_field :alias, :class => 'field', :placeholder=> 'Alias (can be left blank)' %> 
+    <%= check_box_tag 'alias_check', 'true' %> Anonymous post?
+  </div>
+
+    <%= f.text_field :title, :class=>'field', :placeholder=>'Title'%> <%= f.submit 'Submit'%>
+<br/>
+ <%= f.file_field :upload %>
+
+  <p id="content">
+    <%= f.text_area :content, :class=>'content', :placeholder=>'Post area' %>
+  </p>
+
+	<!-- [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].each do |num| %>
+		<= f.check_box "filter#{num}".to_sym %>
+		<= f.label "filter#{num}".to_sym %>
+	< end %> -->
+        <p class ="checkboxes">
+	<%= check_box_tag 'tags[]', 'Anime' %>
+	<%= f.label 'Anime' %>
+
+        <%= check_box_tag 'tags[]', 'Random' %>
+	<%= f.label 'Random'%>
+
+	<%= check_box_tag 'tags[]', 'Video Games' %>
+	<%= f.label 'Video Games' %>
+
+	<%= check_box_tag 'tags[]', 'Magic' %>
+	<%= f.label 'Magic' %>
+
+	<%= check_box_tag 'tags[]', 'Ponies' %>
+	<%= f.label 'Ponies'%>
+	<br/>
+
+	<%= check_box_tag 'tags[]', 'Intellectual' %>
+	<%= f.label 'Intellectual' %>
+
+	<%= check_box_tag 'tags[]', 'Minecraft' %>
+	<%= f.label 'Minecraft' %>
+
+	<%= check_box_tag 'tags[]', 'Television' %>
+	<%= f.label 'Television' %>
+
+	<%= check_box_tag 'tags[]', 'Music' %>
+	<%= f.label 'Music' %>
+
+	<%= check_box_tag 'tags[]', 'International' %>
+	<%= f.label 'International'%>
+        </p>
+
+
+          <p class ="rules"">
+    * <%= current_version_text %> <br/>
+    * Feel free to suggest features or improvements.<br/>
+    * If you notice any bugs, inform Jon ASAP.</p>
+
+        <hr/>
+
+<% end %>
+         <p><b><%= news_line(1) %></b></p>
+         <p><%= news_line(2) %></p>
+         <p<%= news_line(3) %></p>
+         <hr/>
+
+
+<%= link_to '', posts_path, :class=>'cancel floatLeft' %>
+
+
+	<% @posts.each do |post| %>
+
+
+				
+				<!--=# link_to "Flag", :controller => "posts", :action => "update", #:method => :put, :post => {:flag => true}%>-->
+                                
+                                 
+                                <%= render post  %>
+                                <br>
+
+
+                                        <p class ="filesize">
+                                        <% if comments_omitted_num(post) == 1 %>
+                                        1 post <%= image_replies_omitted_message(post) %> omitted. Click Reply to view.
+  	                                <% elsif comments_omitted_num(post) > 1 %>
+                                        <%= comments_omitted_num(post) %> posts <%= image_replies_omitted_message(post) %>  omitted. Click Reply to view.
+                                        <% end %>
+                                        </p>
+                                
+
+                                        <% comments_omit(post).each do |c| %>
+                                
+                                        <%= render c %>
+                
+                                        <% end %>
+
+                                        <hr>
+                                        
+
+	<% end %>
+  
+  <%= paginate @posts %>
+

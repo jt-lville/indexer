@@ -1,0 +1,99 @@
+<!-- LOGIN -->
+<style type="text/css">
+
+	
+	#container {
+  	margin:auto;
+  	width: 995px; 
+  	}
+
+
+	#box {
+		border-style:solid;
+		border-width:1px;
+		border-color:#d0d0d0;
+		width:741px;
+		height:337px;
+		position:relative;
+		left:-320px;
+		margin:80px 0 0 460px;
+	}
+	#boxContent {
+		padding:8px 20px 0 20px; 
+	}
+	#boxContent h1 {
+		padding:33px 0 4px 45px;
+	}
+	#box #boxContent .betaLabelTextField {
+		position:relative;
+		top:5px;
+	}
+	#boxContent div {
+		margin:30px 46px 0 0;
+		
+	}
+	
+	#boxContent #divt {
+	margin:30px 80px 0 0;
+	padding-left:28px;
+	}
+	#boxContent form section {
+		margin-right:50px;
+	}
+	#boxContent form section label {
+		margin-right:90px;
+	}
+	#box #boxContent .betaTextField {
+		position:relative;
+		top:2px;
+		width:492px;
+		height:28px;
+	}
+	#box #boxContent .button {
+		width:90px;
+		height:37px;
+		position:relative;
+		top:30px;
+		left:498px;
+	}
+</style>
+
+<div id='container'>
+
+	<div id="boxContent">
+		<h1>Super Secret Login</h1>
+		
+		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			<div>
+				<%=f.label :email, 'Email Address:', :class=>'inline betaLabelTextField' %>
+				<%= f.text_field :email, :class=>'betaTextField' %>
+			</div>
+			<div id="divt">	
+				<%=f.label :password, 'Password:', :class=> 'inline betaLabelTextField' %>
+				<%=f.password_field :password, :class=>'betaTextField' %>
+			</div>
+                <br>
+			<section>
+				<%= f.submit '', :class=>'button inline' %>
+                          <br>
+				<% if devise_mapping.rememberable? -%>
+					<span>
+					<br>
+						<%= f.check_box :remember_me %> <%= f.label :remember_me %>
+					</span>
+				<% end -%>
+
+                                <%= link_to "Register", '/join' %> <br />
+
+                                <%-if devise_mapping.recoverable? && controller_name !=
+				'passwords'%>
+                                <br>
+					<%= link_to "Password Retrieval", new_password_path(resource_name) %>
+				<% end -%>
+
+			</section>
+		<% end %>
+			
+	</div>
+
+</div>

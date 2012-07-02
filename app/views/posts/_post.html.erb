@@ -1,0 +1,45 @@
+
+	<% if current_user == post.user or can? :manage, :all %>
+         <span class ="plaintext"> [<%= link_to_if(can?(:delete, post), 'Delete', post_path(post), :class=>'delbuttons', :id=>'delete', :confirm => "Are you sure?", :method => :delete) {} %>]
+         </span>
+        <% end %>
+
+<%# if post.upload == nil or post.upload.url == "/uploads/medium/missing.png" %>
+<%#= image_tag(random_lily_url, :class=>"image", :size=>'200x200')%>
+<%# else %>
+<% if post.upload.url != "/images/original/missing.png" %>
+ <span class ="filesize"><%= post.upload_file_size %> bytes </span>
+ <span class ="filetitle"><%= post.upload_file_name %></span><br/>
+ <% end %>
+<%= link_to (image_tag post.upload.url(:medium), :class => "image", :size => '200x200'), post.upload.url %>
+ 
+<%# end %>
+
+                                        <b class ="replytitle"><%= post.title %></b>
+                                        <b class ="postername">
+					<% if post.is_anonymous %>
+                                        <%= post.alias %>
+                                        <% else %>
+                                        <%= link_to post.name, user_path(post.user) %>
+                                        <% end %>
+                                          </b>
+
+                                        <span class ="plaintext"><%=post.created_at.strftime("%B %e %Y %l:%M %p")%>
+                                         No.<%= link_to post.id, post_path(post)%> [<%= link_to "Reply", post, :class => 'filesize' %>]
+                                        
+                                        </span>
+
+
+                                        <div class ="row2"><%= filter_comment(post) %></div>
+
+                                        <p class ="postername">Tags:
+
+                                        <% post.tag_list.each do |tag|  %>
+						<%= link_to tag.capitalize, { :action => :tag_with,
+                                                   :tag => tag, :controller => "preferences"}, :method=>:post, :class=>'blue'%>
+
+                                        <%end%></p>
+                                        
+                                        <%= image_tag post.user.avatar.url(:thumb), :size => '100x100', :class => 'floatRight' %>
+
+                                        <!-- WHITE SPAAAACE!! -->  <br/><br/><br/><br/><br/><br/><br/><br/>

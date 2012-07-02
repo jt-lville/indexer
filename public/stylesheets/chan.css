@@ -1,0 +1,255 @@
+body {
+         font-size:12pt;
+         background:#f6f9ff;
+         color:#000000;
+}
+
+a {
+        background:inherit;
+        color:#0000EE;
+        text-decoration:underline;
+        font-family:serif;
+
+
+}
+
+a:link {
+
+  color:#596a93;
+  text-decoration:inherit;
+  font-family:inherit;
+  font-size:inherit;
+
+}
+a:visited {
+        background:inherit;
+        color:#596a93;
+        text-decoration:inherit;
+        font-family:inherit;
+}
+a:hover {
+        color:#DD0000;
+        background:inherit;
+        text-decoration:inherit;
+        font-family:inherit;
+        font-size:inherit;
+}
+.adminbar {
+        text-align:right;
+        background:inherit;
+        clear:both;
+        float:right;
+}
+.logo {
+        clear:both;
+        text-align:center;
+        background:inherit;
+        font-size:24pt;
+        color:#800000;
+        width:100%;
+}
+.theader {
+        background:#0010E0;
+        color:#FFFFFF;
+        width:100%;
+}
+.postarea {
+        background:inherit;
+}
+.rules {
+        font-size:10px;
+        font-family:sans-serif;
+
+        margin: 0 0 -80px 0px;  /*adjust this line for the rules text*/
+        width: 440px;
+        height: -40px;
+        position:relative;
+        top: -80px;
+}
+.postblock {
+        background:#EEAA88;
+        color:#800000;
+        font-weight:800;
+}
+.footer {
+        text-align:center;
+        font-size:12px;
+        font-family:serif;
+}
+.passvalid {
+	background:#EEAA88;
+	text-align:center;
+	width:100%;
+	color:#ffffff;
+}
+.dellist {
+	background:inherit;
+	text-align:center;
+}
+.delbuttons {
+	background:inherit;
+	text-align:center;
+	padding-bottom:4px;
+
+}
+.managehead {
+	background:#0F8FE1;
+	color:#800000;
+	font-family:sans-serif;
+	font-size:14px;
+	padding:0px;
+}
+.postlists {
+	background:#FFFFFF;
+	width:100%;
+	padding:0px;
+	color:#800000;
+}
+.row1 {
+	background:inherit;
+	font-family:sans-serif;
+	font-size:13px;
+	color:#000000;
+}
+.row2 {
+        background:inherit;
+        font-family:sans-serif;
+        font-size:13px;
+        color:#000000;
+}
+.unkfunc {
+	background:inherit;
+	color:#789922;
+        font-size:13px;
+        font-family:sans-serif;
+}
+.filesize {
+	font-size:14px;
+	font-family:sans-serif;
+	text-decoration:none;
+}
+.filetitle {
+	background:inherit;
+	font-size:14px;
+	font-family:sans-serif;
+	color:#CC1105;
+	font-weight:800;
+}
+.postername {
+	background:inherit;
+	font-size:14px;
+	font-family:sans-serif;
+	color:#117743;
+	font-weight:800;
+
+}
+.oldpost {
+        background:inherit;
+        font-size:18px;
+        font-family:serif;
+        color:#CC1105;
+        font-weight:800;
+}
+.omittedposts {
+        background:inherit;
+        font-size:18px;
+        font-family:serif;
+        color:#070707;
+        font-weight:800;
+}
+.reply {
+	background:#F0E0D6;
+	color:#000000;
+	font-family:sans-serif;
+        font-style:normal;
+}
+.doubledash {
+ 	vertical-align:top;
+	clear:both;
+	float:left;
+}
+.replytitle {
+        background:inherit;
+        font-size:14px;
+        font-family:sans-serif;
+        color:#1f2739;
+        font-weight:800;
+}
+.commentpostername {
+        background:inherit;
+        font-size:12px;
+        font-family:sans-serif;
+        color:#117743;
+	font-weight:800;
+}
+.thumbnailmsg {
+	background:inherit;
+	font-size:9px;
+	font-family:sans-serif;
+	color:#800000;
+}
+
+.plaintext {
+        background:inherit;
+        font-family:sans-serif;
+        font-size:14px;
+        color:#000000;
+}
+
+.repliesbox {
+  
+        margin: 0 -20 0 20px;
+        background: #ebf0fd;
+        width: 800px;
+        position:relative;
+        left:40px;
+}
+
+.opbox {
+
+        margin: 0 0 0 20px;
+        background: #ebf0fd;
+        width: 600px;
+        position:relative;
+        left:0px;
+}
+
+.content {
+        position:relative;
+        width:435px;
+        height:150px;
+        top:-20px;
+        left:0px;
+        margin-bottom:0px;
+}
+
+.checkboxes{
+        margin: 0 0 0 0px;
+        background: #ebf0fd;
+        width: 440px;
+        position:relative;
+        top: -90px;
+        left:0px;
+}
+
+.image{
+    float:left;
+    margin: 0 0 0 0px;
+    position:relative;
+    left:-20px
+}
+
+h1 {
+
+    font-size:32px;
+    color:#CC1105;
+    font-weight:800;
+
+}
+
+h6 { /* strictly for comment ids */
+        background:inherit;
+        font-family:sans-serif;
+        font-size:14px;
+        color:#000000;
+}

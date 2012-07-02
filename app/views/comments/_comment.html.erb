@@ -1,0 +1,57 @@
+
+<div class ="repliesbox">
+
+                <n class='postername'>
+
+                 <% if comment.file.url != "/images/original/missing.png" %>
+                   <span class ="filesize"><%= comment.file_file_size %> bytes </span>
+                  <span class ="filetitle"><%= comment.file_file_name %></span> <br/>
+                <%= link_to (image_tag comment.file.url, :class => "image", :size => '200x200'), comment.file.url %>
+                  <% end %>
+
+                  <% if comment.user.avatar.url != "/images/medium/missing_av.png" %>
+                   <%= image_tag comment.user.avatar.url, :size => '50x50', :class => 'floatRight' %>
+                  <% end %>
+
+                <% if comment.is_anonymous %>
+                  <%= comment.alias %>
+                <% else %>
+                <%= link_to comment.user.name, user_path(comment.user)%>
+                <% end %>
+
+
+                </n>
+                <n class ="plaintext"><%= comment.created_at.strftime("%B %e %Y %l:%M %p ")%> No.<n id="<%= comment.id %>"><%= link_to comment.id, (post_path(comment.post)+"#" + comment.id.to_s) %></n>
+                  <% if comment.is_saged %>
+                  <b><i>SAGE!</i></b>
+                <% end %>
+
+                <% if current_user == comment.user or can? :manage, :all   %>
+                [<%= link_to 'Delete', [comment.post, comment], :class=>'comdel', :confirm => 'Are you sure?' ,:method => :delete %>]
+                <% end %>
+
+                </n>
+
+
+  
+                <div class='commented'>
+				<div id='textpos'>
+                                  
+                
+                <div class ="row1"><%= filter_comment(comment) %></div>
+
+
+                  <% if comment.user.avatar.url != "/images/medium/missing_av.png" %>
+                   <br/><br/>
+                  <% end %>
+
+                <% if comment.file.url != "/images/original/missing.png" %>
+                <br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                <% end %>
+
+                </div>
+		
+
+</div>
+  </div>
+<br/>

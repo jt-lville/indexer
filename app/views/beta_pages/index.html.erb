@@ -1,0 +1,294 @@
+<style type='text/css'>
+
+#banner {
+background-image:url('/images/banner.png');
+position:relative;
+top:-55px;
+height:342px;
+width:100%;
+}
+
+#container {
+  margin:auto;
+  width: 995px; 
+  }
+
+#vid {
+position:relative;
+top:35px;
+background-repeat: no-repeat;
+}
+
+#globe {
+position:relative;
+top:-277px;
+float:right;
+background-repeat: no-repeat;
+width:788px;
+height:336px;
+background-image:url('/images/map.png');
+}
+
+#bannertext {
+position:relative;
+top:70px;
+float:right;
+background-repeat: no-repeat;
+color:#FFF;
+}
+
+#bannertext p {
+font-size:17px;
+}
+
+#join {
+position:relative;
+top:30px;
+background-repeat:no-repeat;
+right:120px;
+}
+
+#mainimage img{
+height:218px;
+width:296px;
+position:relative;
+top:-400px;
+margin-left:0px;
+margin-right:31px;
+}
+
+#headoo {
+font-size:30px;
+font-weight:bold;
+color:#000;
+position:relative;
+top:-675px;
+left:0px;
+
+}
+
+#control {
+position:relative;
+top:200px;
+margin-right:6px;
+}
+
+#heads {
+ margin-right:auto;
+position:relative;
+top:-430px;
+left:0px;
+
+}
+
+#heads2 {
+ margin-right:auto;
+position:relative;
+top:-555px;
+left:331px;
+}
+
+#heads3 {
+ margin-right:480px;
+ padding-right:30px;
+position:relative;
+top:-680px;
+left:662px;
+}
+
+
+#heada1 {
+font-size:30px;
+font-weight:bold;
+color:#000
+position:relative;
+top:100px;
+
+}
+#heada2 {
+font-size:30px;
+font-weight:bold;
+color:#000
+position:relative;
+left:50px;
+}
+#heada3 {
+font-size:30px;
+font-weight:bold;
+color:#000
+position:relative;
+left:50px;
+}
+
+#heada1 p{
+font-size:17px;
+}
+
+#heada2 p{
+font-size:17px;
+}
+
+#heada3 p{
+font-size:17px;
+}
+
+
+#backgroundtwo {
+	background-color:#f7f7f7;
+	height:500px;
+	position:relative;
+	top:460px;
+}
+
+#request {
+background-image:url('/images/request.png');
+width:493px;
+height:220px;
+position:relative;
+left:462px;
+top:100px;
+
+}
+
+
+#requestx {
+	font-size:30px;
+	color:#FFF;
+	font-weight:bold;
+	position:relative;
+	top:20px;
+	left:45px;
+}
+
+#xt {
+	font-size:12px;
+	color:#FFF;
+	position:relative;
+	top:75px;
+}
+
+#submit {
+	width:392px;
+	height:39px;
+	position:relative;
+	top:10px;
+}
+
+#divider {
+	background-image:url('/images/divider.png');
+	width:393px;
+	height:1px;
+	position:relative;
+	top:42px;
+}
+
+#moar {
+	font-size:18px;
+	  color:#FFF;
+  cursor:pointer;
+	font-weight:bold;
+	position:relative;
+	top:72px;
+	left:85px;
+
+}
+
+#setup {
+position:relative;
+top:54px;
+}
+
+#setup h{
+font-size:30px;
+color:#000;
+font-weight:bold;
+position:relative;
+top:0px;
+float:left;
+}
+
+#setup p{
+font-size:17px;
+color:#000;
+position:relative;
+top:10px;
+left:0px;
+}
+
+</style>
+<%= stylesheet_link_tag "chan" %>
+<title>sschan</title>
+
+<div id='banner'>
+
+
+<div id='container'>
+
+
+<div id='vid'>
+<iframe width="448" height="276" src="<%= random_frontpage_yt_url %>?rel=0&iv_load_policy=3&amp;autoplay=1" frameborder="0" allowfullscreen></iframe> <!-- autoplay -->
+</div>
+
+<div id='globe'>
+<div id='bannertext'>
+
+
+<div id='join'>
+  <p>Welcome to a super secret place!</p><br/>
+ <%= link_to image_tag('/images/join.png'),'/login' %>
+   </div>
+</div>
+</div>
+
+
+</div>
+
+
+
+<div id='container'>
+<div id='control'>
+<div id='mainimage'>
+
+
+<%=image_tag('/images/mid1.png')%>
+<%=image_tag('/images/mid2.png')%>
+<%=image_tag('/images/mid3.png')%>
+</div>
+
+<div id='headoo'>
+About sschan
+</div>
+
+<div id='heads'>
+      <hr/>
+         <p><b><%= news_line(1) %></b></p>
+         <p><%= news_line(2) %></p>
+         <p<%= news_line(3) %></p>
+         <p<%= news_line(4) %></p>
+  <hr/><br/>
+
+<div id='heada1'>
+  What is sschan?
+<p>Super Secret Channel is an online <br/>platform for members to gather<br/> and create Super Secret Clubs (or SSCs) <br/> with other people. </p>
+</div>
+</div>
+
+<div id='heads2'>
+<div id='heada2'>
+What is an SSC?
+<p>A Super Secret Club is a group of people<br/> with a shared connection, often a high <br/> school or workplace, who gather to <br/>share private and public media.</p>
+</div>
+
+</div>
+
+<div id='heads3'>
+<div id='heada3'>
+Why sschan?
+<p>Facebook's group interface lacks some of our <br/> desired features, so the development of this <br/>website has been pursued for practical <br/> reasons and programming practice.</p>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>

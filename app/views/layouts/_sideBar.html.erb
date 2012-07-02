@@ -1,0 +1,32 @@
+<div id="sidee" class="floatLeft">
+  <div id="sidebar">
+
+  <!--  <h2><%= link_to "Your Profile", user_path(@user) %></h2>-->
+  <div id="welcome">
+   Welcome, <%= @user.name%>  !
+   <br>
+   
+   </div>
+   <%= link_to image_tag(@user.gravatar_url), user_path(@user) %> <br>
+   <!--<div id="notificon">
+   <%= image_tag('sidebar/notif.png')%>
+   </div>-->
+   <div id="icons">
+   <div id="proficon">
+      
+   <%= link_to image_tag('sidebar/profile.png'),user_path(@user) %>
+   </div>
+
+   
+   <div id="newposticon">
+   <%= link_to(submit_tag('', :class=>'floatLeft'), new_post_path)%>
+   </div>
+</div>
+
+    
+    
+
+
+  </div>
+</div>
+

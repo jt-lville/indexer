@@ -1,38 +1,26 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
-gem 'rails', '3.2.1'
+gem 'rails', '3.0.8'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'sqlite3', :require => 'sqlite3'
+gem 'devise'
+gem 'cancan'
+gem 'kaminari'
+gem 'gravatar_image_tag', '1.0.0.pre2'
+#gem 'vote_fu'
+gem 'rake', '0.9.2.2'
+gem 'acts-as-taggable-on', '~>2.1.0'
+gem 'gravtastic' #gravatar support
 
-gem 'sqlite3'
+gem 'awesome_nested_set'
+gem 'impressionist'
 
+gem 'pusher'
+#gem 'pusher-gem', :git => "git://github.com/pusher/pusher-gem.git"
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
-  gem 'uglifier', '>= 1.0.3'
+group :development do
 end
 
-gem 'jquery-rails'
-
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the web server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+group :test do
+  gem 'webrat', '0.7.1'
+end

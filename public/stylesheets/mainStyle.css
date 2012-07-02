@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+/* Reset CSS Settings */
+html,body,div,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,p,blockquote,fieldset,input,abbr,article,aside,command,details,figcaption,figure,footer,header,hgroup,mark,meter,nav,output,progress,section,summary,time { margin: 0; padding: 0; }
+h1,h2,h3,h4,h5,h6,pre,code,address,caption,cite,code,em,strong,th,figcaption { font-size: 1em; font-weight: normal; font-style: normal; }
+fieldset,iframe { border: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+caption,th { text-align: left; }
+article,aside,footer,header,hgroup,nav,section,figure,figcaption { display: block; }
+
+
+/* Main CSS Document */
+@font-face { 
+
+	 font-family: myriad-pro,sans-serif;
+
+}
+
+BODY {
+  margin:0px;
+  color:#000; 
+
+	font-family: myriad-pro,sans-serif;
+	font-size:14px;
+}
+input, textarea {
+	font-family: myriad-pro,sans-serif;
+	font-size:14px;
+
+}
+
+#main{
+  /*background-image: url("/images/background.png");*/
+  background-repeat: no-repeat;
+  background-size:100%;
+  background-position:0 -6px;
+}
+#content{
+  width:1200px;
+	
+  margin:0 auto 0 auto;
+  padding-top:45px;
+	padding-bottom:75px;
+}
+h1{
+
+	font-family: myriad-pro,sans-serif;
+
+  font-size:32px;
+  font-weight:500;
+  margin-bottom:10px;
+}
+h2{
+
+	font-family:Open Sans, sans-serif;
+
+	font-size:28px;
+	font-weight:500;
+}
+p {
+  line-height:21px;
+  font-size:15px;
+	font-weight:400;
+}
+
+.blue {
+	color: #4877B7
+	}
+.green{
+	color: #00BE69
+}
+.inline {
+  display: inline;
+}
+.floatLeft {
+  float: left;
+}
+.floatRight {
+  float: right;
+}
+.clearLeft {
+  clear:left;
+}
+.clearRight {
+  clear:right;
+}
+.clearBoth {
+	clear:both;
+}
+.button {
+  background-image:url(../images/subbutton.png); 
+  		width:90px;
+		height:37px;
+		padding:none;
+		border:none;
+		
+  cursor: pointer;
+}
+.button:hover {
+		background-image:url(../images/subbuttonhover.png);
+		width:90px;
+		height:37px;
+}
+.button:active {
+		background-image:url(../images/subbuttonactive.png);
+		width:90px;
+		height:37px;
+		
+}

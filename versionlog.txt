@@ -1,0 +1,4 @@
+Version beta_1.7.3.1 - private messaging slightly implemented! in real time!
+Version beta_1.7.2 - sages and comment anonymity is done!
+Version beta_1.7 - image and comment uploads work! avatars still dubious though
+Version beta_1.6.01 - attempts to add image uploading, dev logs added

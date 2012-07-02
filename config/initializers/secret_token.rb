@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Indexer::Application.config.secret_token = 'b447c0ced6eb2dc804d74b7dfd73bddc2894f326a8c82fe0e2b38abac799fc376fcca0bff687fef505ae7d1f3b4b701059f5465bb989b4104286c02ad427d170'
+OrchiveApp::Application.config.secret_token = '13665eebca2ebb6c0f288fe030a134b97451f88f398330a1f84eaaca540df28f0adf78404244f82d907655dd6e0226cfb232e1250293aac56ca53e18d30cecb0'

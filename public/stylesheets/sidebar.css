@@ -1,0 +1,86 @@
+/* Sidebar */
+    #sidee {
+		height:100%;
+		border:#CCCCCC 1px solid;
+		border-top:none;
+		color:#6C9;
+		width:182px;
+		border-bottom: 1px solid #E7E7E7;
+		background-color:#F2F7F3;
+    	padding: 8px;
+		position:absolute;
+    }
+    #sidebar { 
+	
+		}
+	#sidebar #welcome {
+		position:relative;
+		top:50px;
+		left:90px;
+	}
+	
+	#icons {
+		position:relative;
+		top:-10px;
+		left:40px;
+	}
+		
+	#sidebar #proficon {
+	position:relative;
+	top:-23px;
+	left:28px;
+	margin-right:20px;
+	margin-left:20px;
+	}
+	
+	/* #sidebar #proficon:hover {
+	background:#fff url(../images/sidebar/profilehover.png) 0 0 no-repeat;
+	position:relative;
+	top:-22px;
+	left:28px;
+	margin-right:20px;
+	margin-left:20px;
+	} */
+	
+	#sidebar #newposticon input.floatLeft{
+	background:#fff url(../images/sidebar/newpost.png) 0 0 no-repeat;
+	border:none;
+	width: 28px;
+	height: 28px;
+	position:relative;
+	top:-54px;
+	left:76px;
+	}
+	
+	#sidebar #newposticon input.floatLeft:hover{
+	background:#fff url(../images/sidebar/newposthover.png) 0 0 no-repeat;
+	border:none;
+	width: 28px;
+	height: 28px;
+	position:relative;
+	top:-54px;
+	left:76px;
+	}
+		
+	/*#sidebar #notificon {
+		position:relative;
+		top:10px;
+		left:20px;
+	}*/
+	
+
+    #sidebar #profile {
+			margin-top:4%;
+		}
+    #sidebar #postingInterface h1 {
+
+			font-size:0px; font-weight:600; margin-top:7px;
+
+		}
+    #sidebar #postingInterface p {
+			font-size:0px; ; 
+		}
+    #sidebar #postingInterface #postButton {
+			margin:4% auto 5% auto; padding:1%;
+			height:30px;
+		}

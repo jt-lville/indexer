@@ -1,0 +1,98 @@
+<div id="header">
+<div id="headerContent">
+
+<div id="topBar"> 
+  <%= link_to(image_tag('logo.png', :alt=>'SSChan', :id=>'logo'), '/posts') %>
+  
+  <span id="headPages" class="floatRight">
+    <p>
+      <%= link_to 'Home', '/' %> |
+      <%= link_to 'sschan', '/posts' %> |
+			
+			<% if current_user.role?('admin') %>
+				<%= link_to('Dashboard', '/dashboard') %> |
+			<% end %>
+
+                        <%=link_to('Chat', '/chat')%> |
+			<%=link_to('Need Nerf', '')%> |
+                        <%=link_to('Wiki', '')%> |
+                        <%=link_to('Nostalgia', '')%> |
+                        <%=link_to('Playlist', '')%> |
+			<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+			
+    </p>
+    
+  </span>
+
+	
+</div>
+
+<div id="navBar">
+
+<section>
+  <!-- <span id="feeds" class="floatLeft" >
+		<a href = '/posts'>Feeds</a>
+                <%= link_to displayIcon(1), {:action => :make_feed_preference,
+                :preference => "trending value",  :controller => "preferences"}, :method=>:post, :title=>'Trending Value' %>
+
+                <%= link_to displayIcon(2), {:action => :make_feed_preference,
+                :preference => "time",  :controller => "preferences"}, :method=>:post, :title=>'Most Recent' %>
+
+                <%= link_to displayIcon(3), {:action => :make_feed_preference,
+                :preference => "location",  :controller => "preferences"}, :method=>:post, :title=>'Location' %>
+
+                <%= link_to displayIcon(4), {:action => :make_feed_preference,
+                :preference => "followers", :controller => "preferences"}, :method=>:post, :title=>'Followers' %>
+                
+  </span> -->
+
+  
+  <span id="filters" class='floatRight'>
+    <!--<a>Filters</a>
+              <%= link_to displayIcon(5), { :action => :tag_with, 
+               :tag => "science", :controller => "preferences"}, :method=>:post, :title=>'Science'%>
+    
+              <%= link_to displayIcon(6), { :action => :tag_with, 
+               :tag => "nature", :controller => "preferences"}, :method=>:post, :title=>'Nature' %>
+    
+              <%= link_to displayIcon(7), { :action => :tag_with, 
+               :tag => "entertainment", :controller => "preferences"}, :method=>:post, :title=>'Entertainment' %>
+    
+              <%= link_to displayIcon(8), { :action => :tag_with, 
+               :tag => "sports", :controller => "preferences"}, :method=>:post, :title=>'Sports' %>
+
+              <%= link_to displayIcon(9), { :action => :tag_with, 
+               :tag => "tech", :controller => "preferences"}, :method=>:post, :title=>'Technology' %>
+
+              <%= link_to displayIcon(10), { :action => :tag_with, 
+               :tag => "business", :controller => "preferences"}, :method=>:post, :title=>'Business' %>
+
+              <%= link_to displayIcon(11), { :action => :tag_with, 
+               :tag => "social", :controller => "preferences"}, :method=>:post, :title=>'Social' %>
+
+              <%= link_to displayIcon(12), { :action => :tag_with, 
+               :tag => "crime", :controller => "preferences"}, :method=>:post, :title=>'Crime' %>
+              <%= link_to displayIcon(13), { :action => :tag_with, 
+               :tag => "politics", :controller => "preferences"}, :method=>:post, :title=>'Politics' %>
+
+              <%= link_to displayIcon(14), { :action => :tag_with, 
+               :tag => "other", :controller => "preferences"}, :method=>:post, :title=>'Other' %>
+
+    -->
+              <%= link_to ("Inbox "+ render_unread_count(current_user) +" |"), "/messages" %>
+
+               <% if @preference == nil or @preference.tag_list.empty? %>
+               <%= link_to ("No tags selected |"), '/'  %>
+               <% else %>
+               <%= link_to (@preference.tag_list.join(" ") + " |"), '/'  %>
+               <% end %>
+    
+               <%= link_to "Clear all tags", { :action => :clear_tag_list_and_preferences,
+               :tag => "other", :controller => "preferences"}, :method=>:post, :title=>'Clear' %>
+
+    
+  </span>
+  </section>
+  </div>
+  </div>
+</div>

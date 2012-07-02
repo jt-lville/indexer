@@ -1,0 +1,81 @@
+<%= stylesheet_link_tag "chan" %>
+
+<div id='picture'>
+<div id='picturetwo'>
+</div>
+</div>
+<div id='profpic'>
+<%#= gravatar_for @user, :size => 200 %>
+  <%= image_tag @user.avatar.url(:medium), :size => "200x200" %>
+</div>
+
+<div id='name'>
+<h1><%= @user_on_page.name %></h1>
+<%=link_to_if(can?(:manage, :all), 'Delete', user_path(@user_on_page), :id=>'delete', :confirm=>'Are you sure you want to delete this user?', :method=>:delete){}%>
+</div>
+
+<b>Email:</b> <%= @user_on_page.email %>
+<br/>
+<b>Posts:</b> <%= @user_on_page.posts.size %>
+<br/>
+<b>Comments:</b> <%= @user_on_page.comments.size %>
+<br/>
+<hr/>
+
+Send <%=@user_on_page.name%> a message!
+<% form_for Message.new do |f| %>
+	<%= f.hidden_field :recipient_id, :value => @user_on_page.id %>
+	<div>
+
+		<%= f.text_field :subject, :placeholder => 'subject'  %>
+	</div>
+	<div>
+		<%= f.text_area :body, :placeholder => 'message'  %>
+	</div>
+	<div>
+		<%= f.submit 'Send' %>
+	</div>
+<% end %>
+
+<br/>
+
+<div id='postbox'>
+</div>
+
+<div id='postpos'>
+<div id='posts'>
+
+<hr/><hr/>
+        <% if @user_on_page.posts.size == 0  %>
+                This user appears to have made no posts.
+                <hr/>
+        <% end %>
+
+ <% @posts.each do |post| %>
+
+                <% unless post.is_anonymous %>
+                <%= render post %>
+                <hr/>
+                <%  end %>
+
+
+ <% end %>
+
+        <hr/>
+        <% @comments.each do |c| %>
+        <% unless c.is_anonymous %>
+        <%= render c %>
+        <% end %>
+
+
+       <% end %>
+
+       <% if @user_on_page.comments.size == 0  %>
+       This user appears to have made no comments.
+      <% end %>
+      <hr/>
+              <%= paginate @comments %>
+
+</div>
+</div>
+

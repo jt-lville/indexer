@@ -1,0 +1,183 @@
+<!-- SIGN UP -->
+<style type="text/css">
+	
+	#container {
+  margin:auto;
+  width: 995px; 
+  }
+  
+  #requesto {
+  background-image:URL('/images/requesto.png');
+  width:646px;
+  height:160px;
+  position:relative;
+  float:right;
+  top:0px;
+  margin-bottom:-30px;
+  }
+  
+  #requesto h{
+  padding-left:20px;
+  font-size:30px;
+  color:#FFF;
+  }
+  
+  #requesto p{
+  font-size:18px;
+  color:#FFF;
+  padding-left:20px;
+  }
+  
+	#box {
+		position:relative;
+		float:left;
+		top:25px;
+		background: white no-repeat;
+		background-position:0 38px;
+		width:646px;
+		height:420px;
+		border-style:solid;
+		border-width:1px;
+		border-color:#d0d0d0;
+		margin:0 0 0 60px;
+	}
+	#boxContent {
+		position:relative;
+		left:0px;
+		top:20px;
+		padding:44px 5px 0 20px;
+	}
+	
+	#boxContent #title {
+		position:relative;
+		top:-360px;
+		left:-90px;
+		font-size:30px;
+		font-weight:500;
+		}
+	
+	#boxContent div {
+		margin-left:0px;
+		margin-bottom:27px;
+	}
+	#boxContent #name {
+		margin-bottom:25px;
+		margin-left:85px;
+	}
+	#boxContent #email {
+		margin-bottom:25px;
+		margin-left:33px;
+	}
+	
+	#boxContent #code {
+		margin-bottom:25px;
+		margin-left:33px;
+		}
+		
+	#boxContent #pass {
+		margin-bottom:25px;
+		margin-left:61px;
+		}
+		
+	#boxContent div img {
+		position:relative;
+		top:5px;
+	}
+	#boxContent P {
+		padding:0 85px 0 0;
+	}
+	
+	#boxContent .betaTextField {
+		width:400px;
+		height:27px;
+		border-style:solid;
+		border-width:1px;
+		border-color:#d0d0d0;
+	}
+	#boxContent .button {
+		position:relative;
+		left:447px;
+		width:90px;
+		height:37px;
+	}
+	
+	#boxContent div.field_with_errors {
+		display:inline;
+		margin-right:0;
+	}
+	
+	#leftstuff {
+	position:relative;
+	top:-590px;
+	float:left;
+	font-size:20px;
+	color:#000;
+	}
+</style>
+<div id="container">
+
+<br/><h1>Sign Up</h1>
+<div id="box">
+
+	<div id="boxContent">
+
+          
+		
+		<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :multipart => true}) do |f| %>
+			<div id="code">
+				<%= f.label :beta_code, 'Top Secret Code:', :class=>'inline betaLabelTextField' %>
+				<%= f.text_field :beta_code, :class=>'betaTextField' %>
+				<%= errorImage(@user, :beta_code)%>
+			</div>
+
+			<div id="name">
+				<%= f.label :name, 'Name:', :class=>'inline betaLabelTextField' %>
+				<%= f.text_field :name, :class=>'betaTextField' %>
+				<%= errorImage(@user, :name)%>
+			</div>
+
+			<div id="email">
+				<%= f.label :email, "Email Address:", :class=>'inline betaLabelTextField' %>
+				<%= f.text_field :email, :class=>'betaTextField' %>
+				<%= errorImage(@user, :email)%>
+			</div>
+
+			<div id="pass">
+				<%= f.label :password, 'Password:', :class=>'inline betaLabelTextField' %>
+				<%= f.password_field :password, :class=>'betaTextField' %>
+				<%= errorImage(@user, :password)%>
+			</div>
+
+			<div>
+				<%= f.label :password_confirmation, "Re-Enter Password:", :class=>'inline betaLabelTextField' %>
+				<%=f.password_field :password_confirmation,:class=>'betaTextField'%>
+				<%= errorImage(@user, :password_confirmation)%>
+			</div>
+             
+                             <%= f.label :avatar, "Avatar: " %> <!-- paperclip! -->
+                             <%= f.file_field :avatar %>
+			<%= f.submit '', :class=>'button floatLeft'%>
+		
+			<p class="">Already a member? <%=link_to('Sign In here', '/login')%></p>
+			<p class=''></p>
+		<% end %>
+		
+		
+	</div>
+</div>
+
+<div id='leftstuff'>
+<body>
+		<h2>
+			&nbsp;</h2>
+
+		<div>
+			&nbsp;</div>
+		<div>
+			You will need a code in order <br>to create an account.</div>
+		<div>
+			&nbsp;</div>
+	</body>
+	</div>
+
+</div>
